@@ -38,4 +38,3 @@ resource localAdminPasswordSecret 'Microsoft.KeyVault/vaults/secrets@2025-05-01'
     value: localAdminPassword
   }
 }
-// testbestand
