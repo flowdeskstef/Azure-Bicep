@@ -50,10 +50,10 @@ resource filespolicy 'Microsoft.RecoveryServices/vaults/backupPolicies@2025-08-0
       vaultRetention: {
         retentionPolicyType: 'LongTermRetentionPolicy'
 
-      // Daily: 14 days
+      // Daily: 16 days
       dailySchedule: {
         retentionDuration: {
-          count: 14
+          count: 16
           durationType: 'Days'
         }
         retentionTimes: [
