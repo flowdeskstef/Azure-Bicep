@@ -42,7 +42,7 @@ param stagingRgName string = 'RG-Staging'
 var stagingRgId = '/subscriptions/${subscription().subscriptionId}/resourceGroups/${stagingRgName}'
 
 // Include the customizations module
-module customizationsModule '9.1 customize.bicep' = {
+module customizationsModule '09.1 customize.bicep' = {
   name: 'customizationsModule'
 }
 
