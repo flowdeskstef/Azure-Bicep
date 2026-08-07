@@ -11,7 +11,7 @@ param minRecommendedMemory int = 16
 param maxRecommendedMemory int = 64
 param IsAcceleratedNetworkSupported string = 'true'
 param IsHibernateSupported string = 'true'
-param DiskControllerTypes string = 'NVMe, SCSI'
+param DiskControllerTypes string = 'NVMe'
 
 resource userAssignedIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2024-11-30' = {
   name: 'AVD-MI'
