@@ -8,6 +8,17 @@ param workspaceName string
 param desktopAppGroupName string = 'Online-Werkplek'
 
 //
+// --- Session host config parameters ---
+//
+
+@description('Resource group name where session host VMs will live')
+param sessionHostRgName string = 'RG-COMPUTE'
+@description('VM name prefix (hosts will be named <prefix>-0001, etc.)')
+param vmNamePrefix string = 'avd-sh'
+@description('VM size SKU (e.g., Standard_D4s_v5)')
+param vmSizeId string = 'Standard_d4as_v6'
+
+//
 // --- Session host infra parameters ---
 //
 
@@ -22,17 +33,6 @@ resource subnet 'Microsoft.Network/virtualNetworks/subnets@2025-05-01' existing 
   name: 'Subnet-SessionHosts'
   parent: vnet
 }
-
-//
-// --- Session host config parameters ---
-//
-
-@description('Resource group name where session host VMs will live')
-param sessionHostRgName string = 'RG-COMPUTE'
-@description('VM name prefix (hosts will be named <prefix>-0001, etc.)')
-param vmNamePrefix string = 'avd-sh'
-@description('VM size SKU (e.g., Standard_D4s_v5)')
-param vmSizeId string = 'Standard_D8as_v7'
 
 //
 // --- Image gallery parameters ---
