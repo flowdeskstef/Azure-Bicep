@@ -114,7 +114,3 @@ resource scalingplan 'Microsoft.DesktopVirtualization/scalingPlans@2026-01-01-pr
 }
 
 output dc string = 'Let op: koppel die nieuwe avd machine aan de load balancer, zodat je met rdp erbij kan komen'
-
-
-// test
-
