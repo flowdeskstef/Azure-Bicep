@@ -49,3 +49,5 @@ foreach ($spId in @($msrdSpId, $wclSpId)) {
 New-MgServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup -ServicePrincipalId $wclSpId -BodyParameter $tdg
 
 Write-Host "✅ SSO target device group configured: $($group.DisplayName)" -ForegroundColor Green
+dfgvsdfg
+
