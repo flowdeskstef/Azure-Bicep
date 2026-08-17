@@ -12,37 +12,37 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.Network
 Register-AzResourceProvider -ProviderNamespace Microsoft.ContainerInstance
 
 #resourcegroupdeployment
-New-AzDeployment -Location "westeurope" -TemplateFile "1. resourcegroups.bicep"
+New-AzDeployment -Location "westeurope" -TemplateFile "01. resourcegroups.bicep"
 
 #natgateway
-New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "2. natgateway.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "02. natgateway.bicep"
 
 #nsg
-New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "3. nsg.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "03. nsg.bicep"
 
 #network
-New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "4. network.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "04. network.bicep"
 
 #load balancer
-New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "5. loadbalancer.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "05. loadbalancer.bicep"
 
 #servers
-New-AzResourceGroupDeployment -ResourceGroupName "RG-COMPUTE" -TemplateFile "6. servers.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-COMPUTE" -TemplateFile "06. servers.bicep"
 
 #keyvault
-New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "7. keyvault.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "07. keyvault.bicep"
 
 #mi + compute gallery
-New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "8. mi + compute gallery.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "AVD" -TemplateFile "08. mi + compute gallery.bicep"
 
 #mi role
-New-AzDeployment -Location "westeurope" -TemplateFile "8.1 mi rbac role.bicep"
+New-AzDeployment -Location "westeurope" -TemplateFile "08.1 mi rbac role.bicep"
 
 #rbac roles
-.\"8.2 rbac roles.ps1"
+.\"08.2 rbac roles.ps1"
 
 #custom image template
-New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "9. custom image template.bicep"
+.\"09. deploy_CIT.ps1"
 
 #host pool
 New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "10. avd - intune.bicep"
@@ -64,6 +64,11 @@ New-AzResourceGroupDeployment -ResourceGroupName "RG-STORAGE" -TemplateFile "12.
 
 #register vault storage account
 New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "12.1 backup vault - pe.bicep"
+
+#image updater
+.\"13. Deploy_ImageUpdate.ps1"
+.\"13.1 Run_ImageUpdate.ps1"
+.\"13.2 Update_HostPool.ps1"
 
 # aa schedule
 
