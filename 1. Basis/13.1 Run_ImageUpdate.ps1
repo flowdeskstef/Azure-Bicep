@@ -1,7 +1,7 @@
 $imgvernew = Get-Date -Format "yyyy.MM.dd"
 
 Invoke-AzResourceAction `
-    -ResourceGroupName "AVD" `
+    -ResourceGroupName "RG-AVD" `
     -ResourceType "Microsoft.VirtualMachineImages/imageTemplates" `
     -ResourceName $imgvernew `
     -Action Run `
