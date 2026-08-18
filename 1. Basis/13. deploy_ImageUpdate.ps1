@@ -2,7 +2,7 @@ $imgverold = (
     Get-AzGalleryImageVersion `
         -ResourceGroupName "RG-AVD" `
         -GalleryName "AVD_GALLERY" `
-        -GalleryImageDefinitionName "WIN11_24H2" |
+        -GalleryImageDefinitionName "w11_ci" |
     Sort-Object PublishedDate |
     Select-Object -Last 1
 ).Name
