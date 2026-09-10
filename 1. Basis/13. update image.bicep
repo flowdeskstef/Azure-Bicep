@@ -44,7 +44,7 @@ param stagingRgName string = 'RG-Staging-update'
 var stagingRgId = '/subscriptions/${subscription().subscriptionId}/resourceGroups/${stagingRgName}'
 
 // Include the customizations module
-module customizationsModule '13.1 customize-update.bicep' = {
+module customizationsModule '13 customize-update.bicep' = {
   name: 'customizationsModule'
 }
 
@@ -89,5 +89,3 @@ resource imageTemplates_name_resource 'Microsoft.VirtualMachineImages/imageTempl
 
   }
 }
-
-output build string = 'start de build nu in de azure portal en pak wat popcorn. Zal waarschijnlijk een aantal uur duren voordat het image klaar is'
