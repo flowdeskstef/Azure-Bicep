@@ -39,7 +39,7 @@ resource avdimagegallery 'Microsoft.Compute/galleries@2024-03-03' existing = {
 }
 
 @description('Naam van de staging resource group voor Azure Image Builder (AIB).')
-param stagingRgName string = 'RG-Staging-update'
+param stagingRgName string = 'RG-Staging-${imgvernew}'
 
 var stagingRgId = '/subscriptions/${subscription().subscriptionId}/resourceGroups/${stagingRgName}'
 
