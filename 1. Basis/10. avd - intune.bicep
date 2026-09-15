@@ -4,6 +4,8 @@
 
 param location string = 'westeurope'
 param hostPoolName string = 'AVD-HostPool'
+param workspaceName string
+param desktopAppGroupName string = 'Online-Werkplek'
 
 //
 // --- Session host config parameters ---
