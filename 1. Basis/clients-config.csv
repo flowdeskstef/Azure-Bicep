@@ -1,12 +1,12 @@
-CustomerName,SubscriptionId,ResourceGroupName,GalleryName,ImageDefName,NetworkRgName,WorkspaceName,KlantnaamInKeyVault
-Andros PB, 9a9de99b-cf05-4811-b143-aa928873225f,AVD,avdimage,W11_CI,AVD
-ATZ Pharma Logistics, 1a49ef8e-e342-42cc-a0f9-ac66fd93f2d6,AVD,avd_images,W11_CI,AVD
-Dent Tool, 9fc86f33-d9da-47c2-9434-6899f66cc674,AVD-DentTool,AVD_GALLERY,W11_CI,AVD-DentTool
-Eerste Kamer Badkamers, 30f1d7d9-e445-48d0-9a8f-999fbe3107f7,AVD,AVD_images,W11_CI,AVD
-Eicom, ae3ba3f8-5b4e-427f-91ab-23c5566f3b78,AVD-RG,AVD_GALLERY ,W11_CI,AVD-RG
-Folkers Toegangstechniek, 63e1d194-a7f1-4a43-bb3e-37e6aab58c97,AVD-RG,AVD_CG ,W11_CI,AVD-RG
-Installatietechniek Bouwheer, c33bcefc-455c-4d25-811b-803ca018f6ca,AVD-RG,AVD_ImageGallery ,W11_CI,AVD-RG
-Installatiebedrijf Simon, ba67f2fa-ef6a-4632-82ca-324dda8dd15c,RG-AVD,AVD_GALLERY ,W11_CI,RG-INFRA
-Mulder Constructie, 72092a29-a8fc-4bec-b075-10afd48fa020,AVD,AVD_GALLERY,W11_CI,AVD,Mulder,MULDER
-Les Genereux, e7b30306-bcb1-43d3-bd25-6c3f78e5a329,RG-AVD,AVD_GALLERY ,W11_CI,RG-INFRA
-Vlastuin Transport, 76868a6b-4e9c-4fb4-be37-c0e8106e6af2,RG-AVD,AVD_GALLERY ,W11_CI,RG-INFRA
+CustomerName,SubscriptionId,ResourceGroupName,GalleryName,ImageDefName,NetworkRgName,WorkspaceName,KlantnaamInKeyVault,HostPoolName,DesktopAppGroupName,SessionHostRgName,VmNamePrefix
+Andros PB,9a9de99b-cf05-4811-b143-aa928873225f,AVD,avdimage,W11_CI,AVD
+ATZ Pharma Logistics,1a49ef8e-e342-42cc-a0f9-ac66fd93f2d6,AVD,avd_images,W11_CI,AVD
+Dent Tool,9fc86f33-d9da-47c2-9434-6899f66cc674,AVD-DentTool,AVD_GALLERY,W11_CI,AVD-DentTool
+Eerste Kamer Badkamers,30f1d7d9-e445-48d0-9a8f-999fbe3107f7,AVD,AVD_images,W11_CI,AVD
+Eicom,ae3ba3f8-5b4e-427f-91ab-23c5566f3b78,AVD-RG,AVD_GALLERY,W11_CI,AVD-RG
+Folkers Toegangstechniek,63e1d194-a7f1-4a43-bb3e-37e6aab58c97,AVD-RG,AVD_CG,W11_CI,AVD-RG
+Installatietechniek Bouwheer,c33bcefc-455c-4d25-811b-803ca018f6ca,AVD-RG,AVD_ImageGallery,W11_CI,AVD-RG
+Installatiebedrijf Simon,ba67f2fa-ef6a-4632-82ca-324dda8dd15c,RG-AVD,AVD_GALLERY,W11_CI,RG-INFRA
+Mulder Constructie,72092a29-a8fc-4bec-b075-10afd48fa020,AVD,AVD_GALLERY,W11_CI,AVD,Mulder,MULDER,AVD-HP,AVD-HP-DAG,AVD,avd-sh-0
+Les Genereux,e7b30306-bcb1-43d3-bd25-6c3f78e5a329,RG-AVD,AVD_GALLERY,W11_CI,RG-INFRA
+Vlastuin Transport,76868a6b-4e9c-4fb4-be37-c0e8106e6af2,RG-AVD,AVD_GALLERY,W11_CI,RG-INFRA
