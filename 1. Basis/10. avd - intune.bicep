@@ -85,10 +85,37 @@ var localAdminPasswordSecretUri = '${kv.properties.vaultUri}secrets/${localAdmin
 @description('MDM provider GUID (if Entra ID join)')
 param tenantid string
 
+resource mi 'Microsoft.ManagedIdentity/userAssignedIdentities@2024-11-30' existing = {
+  name: 'AVD-MI'
+}
+
 // -------------------------------------------------------------
 
-resource hostPool 'Microsoft.DesktopVirtualization/hostPools@2026-01-01-preview' existing = {
+resource hostPool 'Microsoft.DesktopVirtualization/hostPools@2026-01-01-preview' ={
   name: hostPoolName
+  location: location
+  identity: {
+    type: 'UserAssigned'
+    userAssignedIdentities: {
+      '${mi.id}': {}
+    }
+  }
+  properties: {
+    friendlyName: hostPoolName
+    hostPoolType: 'Pooled'
+    loadBalancerType: 'BreadthFirst'
+    preferredAppGroupType: 'Desktop'
+    managementType: 'Automated' // <- automated/session-host-config approach
+    maxSessionLimit: 10
+    startVMOnConnect: false
+    publicNetworkAccess: 'Enabled'
+    validationEnvironment: false
+    directUDP: 'Enabled'
+    managedPrivateUDP: 'Enabled'
+    relayUDP: 'Enabled'
+    publicUDP: 'Enabled'
+    customRdpProperty: 'drivestoredirect:s:*;usbdevicestoredirect:s:*;targetisaadjoined:i:1;redirectclipboard:i:1;redirectprinters:i:0;audiomode:i:0;videoplaybackmode:i:1;devicestoredirect:s:*;redirectcomports:i:1;redirectsmartcards:i:1;enablecredsspsupport:i:1;redirectwebauthn:i:1;use multimon:i:1;enablerdsaadauth:i:1;audiocapturemode:i:1;encode redirected video capture:i:1;redirected video capture encoding quality:i:2;camerastoredirect:s:*'
+  }
 }
 
 // What to build: image, size, network, join, credentials, etc.
@@ -143,6 +170,29 @@ resource shmngt 'Microsoft.DesktopVirtualization/hostPools/sessionHostManagement
       logOffMessage: 'Je wordt binnenkort uitgelogd.'    
       deleteOriginalVm: true
     }
+  }
+}
+
+// Desktop Application Group bound to the host pool
+resource desktopAg 'Microsoft.DesktopVirtualization/applicationGroups@2026-01-01-preview' = {
+  name: desktopAppGroupName
+  location: location
+  properties: {
+    applicationGroupType: 'Desktop'
+    hostPoolArmPath: hostPool.id
+    friendlyName: desktopAppGroupName
+  }
+}
+
+// Workspace that references the desktop AG
+resource workspace 'Microsoft.DesktopVirtualization/workspaces@2026-01-01-preview' = {
+  name: workspaceName
+  location: location
+  properties: {
+    friendlyName: workspaceName
+    applicationGroupReferences: [
+      desktopAg.id
+    ]
   }
 }
 
