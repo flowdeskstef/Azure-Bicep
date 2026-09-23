@@ -18,16 +18,16 @@ New-AzDeployment -Location "westeurope" -TemplateFile "01. resourcegroups.bicep"
 New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "02. natgateway.bicep"
 
 #nsg
-New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "03. nsg.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "03. nsg-dc.bicep"
 
 #network
-New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "04. network.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "04. network-dc.bicep"
 
 #load balancer
-New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "05. loadbalancer.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "05. loadbalancer-dc.bicep"
 
 #servers
-New-AzResourceGroupDeployment -ResourceGroupName "RG-COMPUTE" -TemplateFile "06. servers.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-COMPUTE" -TemplateFile "06. servers-dc.bicep"
 
 #keyvault
 New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "07. keyvault.bicep"
