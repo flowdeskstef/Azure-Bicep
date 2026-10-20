@@ -20,11 +20,17 @@ New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "02. n
 #nsg
 New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "03. nsg-dc.bicep"
 
+New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "03. nsg-sh.bicep"
+
 #network
 New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "04. network-dc.bicep"
 
+New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "04. network-sh.bicep"
+
 #load balancer
 New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "05. loadbalancer-dc.bicep"
+
+New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "05. loadbalancer-sh.bicep"
 
 #servers
 New-AzResourceGroupDeployment -ResourceGroupName "RG-COMPUTE" -TemplateFile "06. servers-dc.bicep"
@@ -33,7 +39,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "RG-COMPUTE" -TemplateFile "06.
 New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "07. keyvault.bicep"
 
 #mi + compute gallery
-New-AzResourceGroupDeployment -ResourceGroupName "AVD" -TemplateFile "08. mi + compute gallery.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "08. mi + compute gallery.bicep"
 
 #mi role
 New-AzDeployment -Location "westeurope" -TemplateFile "08.1 mi rbac role.bicep"

@@ -1,13 +1,13 @@
 param location string = 'westeurope'
 
 @description('wat is de datum van vandaag? bvb 25.09.25')
-param imgver string
+param imgvernew string
 
 param diskSize int = 127
-param vmSize string = 'Standard_D8as_v7'
+param vmSize string = 'Standard_D8as_v6'
 
 @description('RG waar de netwerkresources staan (bijv. RG-INFRA)')
-param networkRgName string = 'RG-INFRA'
+param networkRgName string = 'AVD-BooneIT'
 
 resource imagedef 'Microsoft.Compute/galleries/images@2024-03-03' existing = {
   name: 'W11_CI'
@@ -35,7 +35,7 @@ resource avdimagegallery 'Microsoft.Compute/galleries@2024-03-03' existing = {
 }
 
 @description('Naam van de staging resource group voor Azure Image Builder (AIB).')
-param stagingRgName string = 'RG-Staging'
+param stagingRgName string = 'RG-Staging-${imgvernew}'
 
 var stagingRgId = '/subscriptions/${subscription().subscriptionId}/resourceGroups/${stagingRgName}'
 
@@ -45,7 +45,7 @@ module customizationsModule '09.1 customize.bicep' = {
 }
 
 resource imageTemplates_name_resource 'Microsoft.VirtualMachineImages/imageTemplates@2024-02-01' = {
-  name: imgver
+  name: imgvernew
   location: location
   identity: {
     type: 'UserAssigned'
@@ -66,7 +66,7 @@ resource imageTemplates_name_resource 'Microsoft.VirtualMachineImages/imageTempl
     distribute: [
       {
         excludeFromLatest: false
-        galleryImageId: resourceId('Microsoft.Compute/galleries/images/versions', avdimagegallery.name, imagedef.name, imgver)
+        galleryImageId: resourceId('Microsoft.Compute/galleries/images/versions', avdimagegallery.name, imagedef.name, imgvernew)
         replicationRegions: [
           location
         ]

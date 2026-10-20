@@ -3,11 +3,11 @@ Connect-AzAccount -Tenant $tenantId -UseDeviceAuthentication
 # ================================
 # VARIABLES (pas aan)
 # ================================
-$subscriptionId = "f7c1aa7e-cdef-4483-b00e-540d835a5950"
-$tenantId       = "7b86d213-f413-419f-a3ee-1764ba5f1e99"
+$subscriptionId = "a6ff3bc2-40c4-4897-b257-f3d7ac6ec7d3"
+$tenantId       = "2e1709da-0681-4f65-9215-960f295e1b2f"
 $rgNamemi         = "RG-AVD"
 
-$klantnaam      = "laa"
+$klantnaam      = "klantnaam"
 $miName         = "AVD-MI"           # jouw managed identity naam
 $keyVaultName   = "AVD-$klantnaam-KV"
 
