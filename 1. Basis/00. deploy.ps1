@@ -36,7 +36,9 @@ New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "05. l
 New-AzResourceGroupDeployment -ResourceGroupName "RG-COMPUTE" -TemplateFile "06. servers-dc.bicep"
 
 #keyvault
-New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "07. keyvault.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "07. keyvault-dc.bicep"
+
+New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "07. keyvault-sh.bicep"
 
 #mi + compute gallery
 New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "08. mi + compute gallery.bicep"
@@ -45,13 +47,16 @@ New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "08. mi 
 New-AzDeployment -Location "westeurope" -TemplateFile "08.1 mi rbac role.bicep"
 
 #rbac roles
+###########
+#!!pas variabelen aan!!!!!!!##
+#############
 .\"08.2 rbac roles.ps1"
 
 #custom image template
 .\"09. deploy_CIT.ps1"
 
 #host pool
-New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "10. avd - intune.bicep"
+.\"10. avd - intune deploy.ps1"
 
 #scaling plan
 New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "10.1 scaling plan.bicep"

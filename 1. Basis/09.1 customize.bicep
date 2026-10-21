@@ -2,7 +2,6 @@ var customize = [
   {
     destination: 'C:\\AVDImage\\installLanguagePacks.ps1'
     name: 'avdBuiltInScript_installLanguagePacks'
-    sha256Checksum: '519f1dcb41c15dc1726f28c51c11fb60876304ab9eb9535e70015cdb704a61b2'
     sourceUri: 'https://raw.githubusercontent.com/Azure/RDS-Templates/master/CustomImageTemplateScripts/CustomImageTemplateScripts_2024-03-27/InstallLanguagePacks.ps1'
     type: 'File'
   }
@@ -45,7 +44,6 @@ var customize = [
     runAsSystem: true
     runElevated: true
     scriptUri: 'https://raw.githubusercontent.com/Azure/RDS-Templates/master/CustomImageTemplateScripts/CustomImageTemplateScripts_2024-03-27/TimezoneRedirection.ps1'
-    sha256Checksum: 'b8dbc50b02f64cc7a99f6eeb7ada676673c9e431255e69f3e7a97a027becd8d5'
     type: 'PowerShell'
   }
   {
@@ -53,13 +51,11 @@ var customize = [
     runAsSystem: true
     runElevated: true
     scriptUri: 'https://raw.githubusercontent.com/Azure/RDS-Templates/master/CustomImageTemplateScripts/CustomImageTemplateScripts_2024-03-27/RDPShortpath.ps1'
-    sha256Checksum: '24e9821ddcc63aceba2682286d03cd7042bcadcf08a74fb0a30a1a1cd0cbf910'
     type: 'PowerShell'
   }
   {
     destination: 'C:\\AVDImage\\TeamsOptimization.ps1'
     name: 'avdBuiltInScript_teamsOptimization'
-    sha256Checksum: 'b6e4b30185cb4eb556846ecf9951bacda29ef657230c6ad0924c7f49ab1f6975'
     sourceUri: 'https://raw.githubusercontent.com/Azure/RDS-Templates/master/CustomImageTemplateScripts/CustomImageTemplateScripts_2024-03-27/TeamsOptimization.ps1'
     type: 'File'
   }
@@ -75,7 +71,6 @@ var customize = [
   {
     destination: 'C:\\AVDImage\\multiMediaRedirection.ps1'
     name: 'avdBuiltInScript_multiMediaRedirection'
-    sha256Checksum: 'f577c9079aaa7da399121879213825a3f263f7b067951a234509e72f8b59a7fd'
     sourceUri: 'https://raw.githubusercontent.com/Azure/RDS-Templates/master/CustomImageTemplateScripts/CustomImageTemplateScripts_2024-03-27/MultiMediaRedirection.ps1'
     type: 'File'
   }
@@ -91,7 +86,6 @@ var customize = [
   {
     destination: 'C:\\AVDImage\\windowsOptimization.ps1'
     name: 'avdBuiltInScript_windowsOptimization'
-    sha256Checksum: '3a84266be0a3fcba89f2adf284f3cc6cc2ac41242921010139d6e9514ead126f'
     sourceUri: 'https://raw.githubusercontent.com/Azure/RDS-Templates/master/CustomImageTemplateScripts/CustomImageTemplateScripts_2024-03-27/WindowsOptimization.ps1'
     type: 'File'
   }
@@ -142,7 +136,6 @@ var customize = [
     runAsSystem: true
     runElevated: true
     scriptUri: 'https://raw.githubusercontent.com/Azure/RDS-Templates/master/CustomImageTemplateScripts/CustomImageTemplateScripts_2024-03-27/AdminSysPrep.ps1'
-    sha256Checksum: '1dcaba4823f9963c9e51c5ce0adce5f546f65ef6034c364ef7325a0451bd9de9'
     type: 'PowerShell'
   }
 ]

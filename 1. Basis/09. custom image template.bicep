@@ -7,7 +7,7 @@ param diskSize int = 127
 param vmSize string = 'Standard_D8as_v6'
 
 @description('RG waar de netwerkresources staan (bijv. RG-INFRA)')
-param networkRgName string = 'AVD-BooneIT'
+param networkRgName string = 'RG-INFRA'
 
 resource imagedef 'Microsoft.Compute/galleries/images@2024-03-03' existing = {
   name: 'W11_CI'
@@ -54,7 +54,6 @@ resource imageTemplates_name_resource 'Microsoft.VirtualMachineImages/imageTempl
     }
   }
   properties: {
-
     source: {
       type: 'PlatformImage'
       publisher: 'microsoftwindowsdesktop'

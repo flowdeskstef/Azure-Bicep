@@ -16,7 +16,7 @@ param sessionHostRgName string = 'RG-COMPUTE'
 @description('VM name prefix (hosts will be named <prefix>-0001, etc.)')
 param vmNamePrefix string = 'avd-sh'
 @description('VM size SKU (e.g., Standard_D4s_v5)')
-param vmSizeId string = 'Standard_d4as_v6'
+param vmSizeId string = 'Standard_d8as_v6'
 
 //
 // --- Session host infra parameters ---
@@ -91,7 +91,7 @@ resource mi 'Microsoft.ManagedIdentity/userAssignedIdentities@2024-11-30' existi
 
 // -------------------------------------------------------------
 
-resource hostPool 'Microsoft.DesktopVirtualization/hostPools@2026-01-01-preview' ={
+resource hostPool 'Microsoft.DesktopVirtualization/hostPools@2026-04-01-preview' ={
   name: hostPoolName
   location: location
   identity: {
@@ -119,7 +119,7 @@ resource hostPool 'Microsoft.DesktopVirtualization/hostPools@2026-01-01-preview'
 }
 
 // What to build: image, size, network, join, credentials, etc.
-resource shConfig 'Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations@2026-01-01-preview' = {
+resource shConfig 'Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations@2026-04-01-preview' = {
   name: 'default'
   parent: hostPool
   properties: {
@@ -159,7 +159,7 @@ resource shConfig 'Microsoft.DesktopVirtualization/hostPools/sessionHostConfigur
  }
 }
 
-resource shmngt 'Microsoft.DesktopVirtualization/hostPools/sessionHostManagements@2026-01-01-preview' = {
+resource shmngt 'Microsoft.DesktopVirtualization/hostPools/sessionHostManagements@2026-04-01-preview' = {
   name: 'default'
   parent: hostPool
   properties: {
@@ -174,7 +174,7 @@ resource shmngt 'Microsoft.DesktopVirtualization/hostPools/sessionHostManagement
 }
 
 // Desktop Application Group bound to the host pool
-resource desktopAg 'Microsoft.DesktopVirtualization/applicationGroups@2026-01-01-preview' = {
+resource desktopAg 'Microsoft.DesktopVirtualization/applicationGroups@2026-04-01-preview' = {
   name: desktopAppGroupName
   location: location
   properties: {
@@ -185,7 +185,7 @@ resource desktopAg 'Microsoft.DesktopVirtualization/applicationGroups@2026-01-01
 }
 
 // Workspace that references the desktop AG
-resource workspace 'Microsoft.DesktopVirtualization/workspaces@2026-01-01-preview' = {
+resource workspace 'Microsoft.DesktopVirtualization/workspaces@2026-04-01-preview' = {
   name: workspaceName
   location: location
   properties: {
