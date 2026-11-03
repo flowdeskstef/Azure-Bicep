@@ -38,3 +38,8 @@ output appdisk string = 'Let op: zet ad kerberos auth aan op het storage account
 // 4. zorg ervoor dat je "kdc_enable_cloud_group_sids" tussen de tags zet in de manifest op de app registratie van het storage account. Meestal is dit nodig op een standaard azure file share
 // 5. zorg ervoor dat avd/intune pc via het netwerk het storageaccount kan benaderen (ip whitelisting/private endpoint of over het hele internet aanzetten)
 // 6. (supervision stap) zorg ervoor dat intune/avd kerberos tickets mogen accepteren. Maak hiervoor op intune (managed workplace apparaten) of gpo (avd) een cloud trust policy aan. Zorg ervoor dat de avd policy op alle ou’s ingesteld staat
+
+//$domInfo = Get-ADDomain
+//$domName = $domInfo.DnsRoot
+//$domGUID = $domInfo.ObjectGUID.ToString()
+//$domGUID
