@@ -5,4 +5,5 @@ Write-Host "Nieuwe image: $imgvernew"
 New-AzResourceGroupDeployment `
     -ResourceGroupName "RG-AVD" `
     -TemplateFile "09. custom image template.bicep" `
-    -imgvernew $imgvernew
+    -imgvernew $imgvernew `
+    -location "germanywestcentral"

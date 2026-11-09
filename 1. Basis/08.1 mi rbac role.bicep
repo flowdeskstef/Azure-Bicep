@@ -31,6 +31,4 @@ resource customRole 'Microsoft.Authorization/roleDefinitions@2022-04-01' = {
   }
 }
 
-output custom_images string = 'Let op: maak nu een custom image template aan op avd. Dit kan nog niet via bicep op dit moment. Maak vervolgens de build voordat je verder gaat naar 10. avd'
-
 // C:\Users\%username%\OneDrive - flowdesk\Gedeelde documenten - DATA\Algemeen\Technisch\Azure Virtual Desktop\Algemeen\1. handleidingen\custom image templates.docx 

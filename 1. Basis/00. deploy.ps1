@@ -12,39 +12,39 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.Network
 Register-AzResourceProvider -ProviderNamespace Microsoft.ContainerInstance
 
 #resourcegroupdeployment
-New-AzDeployment -Location "westeurope" -TemplateFile "01. resourcegroups.bicep"
+New-AzDeployment -location "germanywestcentral" -TemplateFile "01. resourcegroups.bicep"
 
 #natgateway
-New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "02. natgateway.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "02. natgateway.bicep" -location "germanywestcentral"
 
 #nsg
-New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "03. nsg-dc.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "03. nsg-dc.bicep" -location "germanywestcentral"
 
 New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "03. nsg-sh.bicep"
 
 #network
-New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "04. network-dc.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "04. network-dc.bicep" -location "germanywestcentral"
 
 New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "04. network-sh.bicep"
 
 #load balancer
-New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "05. loadbalancer-dc.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "05. loadbalancer-dc.bicep" -location "germanywestcentral"
 
 New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "05. loadbalancer-sh.bicep"
 
 #servers
-New-AzResourceGroupDeployment -ResourceGroupName "RG-COMPUTE" -TemplateFile "06. servers-dc.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-COMPUTE" -TemplateFile "06. servers-dc.bicep" -location "germanywestcentral"
 
 #keyvault
-New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "07. keyvault-dc.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "07. keyvault-dc.bicep" -location "germanywestcentral"
 
 New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "07. keyvault-sh.bicep"
 
 #mi + compute gallery
-New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "08. mi + compute gallery.bicep"
+New-AzResourceGroupDeployment -ResourceGroupName "RG-AVD" -TemplateFile "08. mi + compute gallery.bicep" -location "germanywestcentral"
 
 #mi role
-New-AzDeployment -Location "westeurope" -TemplateFile "08.1 mi rbac role.bicep"
+New-AzDeployment -Location "germanywestcentral" -TemplateFile "08.1 mi rbac role.bicep"
 
 #rbac roles
 ###########
