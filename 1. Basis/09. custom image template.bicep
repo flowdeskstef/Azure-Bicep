@@ -79,7 +79,7 @@ resource imageTemplates_name_resource 'Microsoft.VirtualMachineImages/imageTempl
       vmSize: vmSize
       vnetConfig: {
         subnetId: subnetsessinhosts.id
-        proxyVmSize: 'Standard_D2as_v6'
+        proxyVmSize: 'Standard_D2ds_v4'
       }
     }
 
