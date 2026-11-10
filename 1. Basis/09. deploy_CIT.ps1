@@ -6,4 +6,4 @@ New-AzResourceGroupDeployment `
     -ResourceGroupName "RG-AVD" `
     -TemplateFile "09. custom image template.bicep" `
     -imgvernew $imgvernew `
-    -location "germanywestcentral"
+    -location "westeurope"

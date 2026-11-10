@@ -5,4 +5,6 @@ Write-Host "Nieuwe image: $imgvernew"
 New-AzResourceGroupDeployment `
     -ResourceGroupName "RG-AVD" `
     -TemplateFile "10. avd - intune.bicep" `
-    -galleryImageVersion $imgvernew
+    -galleryImageVersion $imgvernew `
+    -location "uksouth" `
+    -vmLocation "germanywestcentral"

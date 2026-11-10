@@ -1,6 +1,6 @@
 targetScope = 'subscription'
 
-param location string = 'germanywestcentral'
+param location string
 
 resource rginfra 'Microsoft.Resources/resourceGroups@2025-04-01' = {
   name: 'RG-INFRA'

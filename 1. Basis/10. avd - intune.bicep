@@ -3,6 +3,7 @@
 //
 
 param location string = 'westeurope'
+param sessionHostLocation string = 'germanywestcentral'
 param hostPoolName string = 'AVD-HostPool'
 param workspaceName string
 param desktopAppGroupName string = 'Online-Werkplek'
@@ -123,7 +124,7 @@ resource shConfig 'Microsoft.DesktopVirtualization/hostPools/sessionHostConfigur
   name: 'default'
   parent: hostPool
   properties: {
-      vmLocation: location
+      vmLocation: sessionHostLocation
       vmResourceGroup: sessionHostRgName
       vmNamePrefix: vmNamePrefix
       vmSizeId: vmSizeId
