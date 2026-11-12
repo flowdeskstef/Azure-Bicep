@@ -74,6 +74,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "11.1 
 New-AzResourceGroupDeployment -ResourceGroupName "RG-STORAGE" -TemplateFile "12. backup vault.bicep" -location "germanywestcentral"
 
 #register vault storage account
+#werkt nog niet : (
 New-AzResourceGroupDeployment -ResourceGroupName "RG-INFRA" -TemplateFile "12.1 backup vault - pe.bicep" -location "germanywestcentral"
 
 #image updater
